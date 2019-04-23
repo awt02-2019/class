@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Docker - Get Started</title>
+  </head>
+  <body>
+    <h1>What is Docker?</h1>
+	<blockquote class="blockquote text-center">
+    <p class="mb-0">Docker is a platform for developers and sysadmins to develop, deploy, and run applications with containers. The use of Linux containers to deploy applications is called containerization. Containers are not new, but their use for easily deploying applications is.</p>
+    <footer class="blockquote-footer">From Docker Docs <cite title="Source Title">https://docs.docker.com/get-started/</cite></footer> 
+  </blockquote>
+    <h2>Install docker</h2>
+    <ol>
+      <li>Install packages needed with command 
+        <code>$ sudo apt-get install \
+        apt-transport-https \
+        ca-certificates \
+        curl \
+        gnupg-agent \
+        software-properties-common</code></li>
+      <li>Add key <code>sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</code></li>
+      <li>Add repository
+        <code>sudo add-apt-repository \
+        "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+        $(lsb_release -cs) \
+        stable"</code></li>
+      <li>Update package index <code>sudo apt-get update</code></li>
+      <li>Install latest Docker CE <code>sudo apt-get install docker-ce docker-ce-cli containerd.io</code></li>
+      <li>Verify docker install <code>sudo docker run hello-world</code></li>
+    </ol>
+    <h1>Docker Compose</h1>
+  <blockquote class="blockquote text-center">
+    <p class="mb-0">Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.</p>
+    <footer class="blockquote-footer">From Docker Docs <cite title="Source Title">https://docs.docker.com/compose/overview/</cite></footer>
+  </blockquote>
+  <h2>Install docker compose</h2>
+  <ol>
+    <li>Install current stable release of Docker Compose <code>sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</code></li>
+    <li>Execution permission <code>sudo chmod +x /usr/local/bin/docker-compose</code></li>
+    <li>Test installation <code>sudo chmod +x /usr/local/bin/docker-compose</code></li>
+  </ol>
+  <h1>Set up a MariaDB</h1>
+  <ul>
+    <li>search on docker hub <code>sudo docker search mariadb</code></li>
+    <li>Default MariaDB image<code>sudo docker pull mariadb/server:10.3</code></li>
+    <li>Start the docker image on port 80<code>sudo docker run -d -p 80:80 mariadb/server:10.3</code></li>
+    <li>check image installed<code>sudo docker images</code></li>
+  </ul>
+  <h1>Set up a Framework PHP</h1>
+  <ul>
+    <li>Search on docker hub <code>sudo docker search codeigniter</code></li>
+    <li>Choose an image from list<code>sudo docker pull agentreno/codeigniter</code></li>
+    <li>check image installed<code>sudo docker images</code></li>
+    <li>Start the docker image on port 80<code>sudo docker run -d -p 80:80 agentreno/codeigniter</code></li>
+    <li>Check on browser the URL<code>http://localhost/welcome/test/ready</code></li>
+  </ul>
+  <h1>Basic commads to work with Docker</h1>
+  <ul>
+    <li>List current images pulled <code>sudo docker images</code></li>
+    <img src="img/T1_docker_images.png">
+    <li>List running containers <code>sudo docker ps</code></li>
+    <img src="img/T1_running_containers.png">
+    <li>List all containers <code>sudo docker ps -a</code></li>
+    <img src="img/T1_all_containers.png">
+    <li>Start a container <code>sudo docker start < name of container ></code></li>
+    <li>Stop a container <code>sudo docker stop < name of container ></code></li>
+    <li>Restart a container <code>sudo docker restart < name of container ></code></li>
+
+  </ul>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

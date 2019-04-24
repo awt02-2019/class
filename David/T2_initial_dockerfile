@@ -50,6 +50,6 @@ RUN rm index.html
 
 RUN rm -rf /var/www/*
 RUN git clone https://github.com/EllisLab/CodeIgniter.git /var/www/agenda
-ADD agenda /var/www/agenda
+ADD database.php /var/www/agenda/application/config/
 
 CMD apachectl -D FOREGROUND

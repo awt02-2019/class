@@ -1,0 +1,10 @@
+Marines - Tasks
+1. Run command test job, if find doesn't work. Run another command like echo, or ls
+http://10.28.136.26:8080/job/task1-list-log-files/
+
+2. Create and Configure Jenkins job with your repository. That should be triggered automatically using Poll SCM
+http://10.28.136.26:8080/job/task2-clone-git-repo/
+
+3. Create a Jenkins Pipeline Job to run the first stage: Build (which include the checkout source code) 
+- simple job http://10.28.136.26:8080/job/task3-gradle-build-develop/
+- declarative pipeline job http://10.28.136.26:8080/job/task3-pipeline-webproject/
